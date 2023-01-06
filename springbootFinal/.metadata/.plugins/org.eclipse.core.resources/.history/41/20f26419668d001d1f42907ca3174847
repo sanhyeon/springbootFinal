@@ -1,0 +1,19 @@
+package com.example.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.dao.SearchDAO;
+import com.example.domain.SearchVO;
+
+@Service
+public class SearchServiceImpl {
+	
+	@Autowired
+	private SearchDAO searchDAO;
+
+	public void saveSearchLog(SearchVO searchVO) {
+		
+	}
+	
+}
