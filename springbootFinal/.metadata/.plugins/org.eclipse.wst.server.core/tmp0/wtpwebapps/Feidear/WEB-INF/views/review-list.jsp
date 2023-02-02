@@ -41,7 +41,7 @@
                                     <p class="date">2023. 01. 02.</p>
                                     <h4 class="title"><a href="blog-details02">일기 제목 들어가는 자리입니다.</a></h4>
                                     <p class="content">일기 내용 세 줄로 들어갈 자리입니다. 일기 내용 세 줄로 들어갈 자리입니다. 일기 내용 세 줄로 들어갈 자리입니다.</p>
-                                    <a class="btn-read-more" href="blog-details"><span>더 보기<i class="la la-arrow-right"></i></span></a>
+                                    <a class="btn-read-more" href="blog-details02"><span>더 보기<i class="la la-arrow-right"></i></span></a>
                                 </div>
                             </div>
                         </div>
@@ -65,7 +65,7 @@
                                     <p class="date">19 September 2019</p>
                                     <h4 class="title"><a href="blog-details">Why You Shouldnât Ride Elephants France.</a></h4>
                                     <p class="content">Praesent eu dolor eu orci vehicula euismod. Vivamus sed sollicitudin libero, vel malesuada</p>
-                                    <a class="btn-read-more" href="blog-details"><span>Read More<i class="la la-arrow-right"></i></span></a>
+                                    <a class="btn-read-more" href="blog-details02"><span>Read More<i class="la la-arrow-right"></i></span></a>
                                 </div>
                             </div>
                         </div>
@@ -79,7 +79,7 @@
                                     <p class="date">19 September 2019</p>
                                     <h4 class="title"><a href="blog-details">Duis pretium gravida enim, vel maximus</a></h4>
                                     <p class="content">Praesent eu dolor eu orci vehicula euismod. Vivamus sed sollicitudin libero, vel malesuada</p>
-                                    <a class="btn-read-more" href="blog-details"><span>Read More<i class="la la-arrow-right"></i></span></a>
+                                    <a class="btn-read-more" href="blog-details02"><span>Read More<i class="la la-arrow-right"></i></span></a>
                                 </div>
                             </div>
                         </div>
@@ -96,7 +96,7 @@
                                     <p class="date">19 September 2019</p>
                                     <h4 class="title"><a href="blog-details">Duis pretium gravida enim</a></h4>
                                     <p class="content">Praesent eu dolor eu orci vehicula euismod. Vivamus sed sollicitudin libero, vel malesuada</p>
-                                    <a class="btn-read-more" href="blog-details"><span>Read More<i class="la la-arrow-right"></i></span></a>
+                                    <a class="btn-read-more" href="blog-details02"><span>Read More<i class="la la-arrow-right"></i></span></a>
                                 </div>
                             </div>
                         </div>
@@ -110,7 +110,7 @@
                                     <p class="date">19 September 2019</p>
                                     <h4 class="title"><a href="blog-details">Why You Shouldnât Ride Elephants France.</a></h4>
                                     <p class="content">Praesent eu dolor eu orci vehicula euismod. Vivamus sed sollicitudin libero, vel malesuada</p>
-                                    <a class="btn-read-more" href="blog-details"><span>Read More<i class="la la-arrow-right"></i></span></a>
+                                    <a class="btn-read-more" href="blog-details02"><span>Read More<i class="la la-arrow-right"></i></span></a>
                                 </div>
                             </div>
                         </div>
@@ -124,7 +124,7 @@
                                     <p class="date">19 September 2019</p>
                                     <h4 class="title"><a href="blog-details">Etiam convallis elementum sapien</a></h4>
                                     <p class="content">Praesent eu dolor eu orci vehicula euismod. Vivamus sed sollicitudin libero, vel malesuada</p>
-                                    <a class="btn-read-more" href="blog-details"><span>Read More<i class="la la-arrow-right"></i></span></a>
+                                    <a class="btn-read-more" href="blog-details02"><span>Read More<i class="la la-arrow-right"></i></span></a>
                                 </div>
                             </div>
                         </div>
@@ -138,7 +138,7 @@
                                     <p class="date">19 September 2019</p>
                                     <h4 class="title"><a href="blog-details">Duis porta, ligula rhoncus euismod</a></h4>
                                     <p class="content">Praesent eu dolor eu orci vehicula euismod. Vivamus sed sollicitudin libero, vel malesuada</p>
-                                    <a class="btn-read-more" href="blog-details"><span>Read More<i class="la la-arrow-right"></i></span></a>
+                                    <a class="btn-read-more" href="blog-details02"><span>Read More<i class="la la-arrow-right"></i></span></a>
                                 </div>
                             </div>
                         </div>
@@ -166,7 +166,7 @@
                           	<!-- 축제 일기(리뷰 작성 버튼) 시작 -->
                             <form class="write-form">
                                 <div class="form-group">
-                                  <button class="submit-btn" type="submit" ><a href="destination-details02">나의 일기 쓰러 가기</a><img src="images/pencil_24.png" ></button>
+                                  <button class="submit-btn" type="submit" ><a href="reviews-write">나의 일기 쓰러 가기</a><img src="images/pencil_24.png" ></button>
                                 </div>
                             </form></br>
                           	<!-- 축제 일기(리뷰 작성 버튼) 끝 -->

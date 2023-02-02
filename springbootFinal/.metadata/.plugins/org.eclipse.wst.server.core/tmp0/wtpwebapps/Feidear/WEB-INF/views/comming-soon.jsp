@@ -12,24 +12,24 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Viaje - Travel, Tour Booking HTML5 Template</title>
     <!-- favicon -->
-    <link rel=icon href="images/favicon.png" sizes="20x20" type="image/png">
+    <link rel=icon href="<%=pjName%>/resources/assets/images/favicon.png" sizes="20x20" type="image/png">
 
     <!-- Additional plugin css -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/slick.css">
-    <link rel="stylesheet" href="css/swiper.min.css">
-    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="<%=pjName%>/resources/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<%=pjName%>/resources/assets/css/animate.css">
+    <link rel="stylesheet" href="<%=pjName%>/resources/assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="<%=pjName%>/resources/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="<%=pjName%>/resources/assets/css/slick.css">
+    <link rel="stylesheet" href="<%=pjName%>/resources/assets/css/swiper.min.css">
+    <link rel="stylesheet" href="<%=pjName%>/resources/assets/css/nice-select.css">
     <!-- icons -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/themify-icons.css">
-    <link rel="stylesheet" href="css/line-awesome.min.css">
+    <link rel="stylesheet" href="<%=pjName%>/resources/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<%=pjName%>/resources/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="<%=pjName%>/resources/assets/css/line-awesome.min.css">
     <!-- main css -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="<%=pjName%>/resources/assets/css/style.css">
     <!-- responsive css -->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="<%=pjName%>/resources/assets/css/responsive.css">
 
 
 </head>
@@ -47,11 +47,11 @@
     <!-- preloader area end -->
       
     <!-- error page area end -->  
-    <div class="comming-soon-page" style="background-image: url(images/bg/12.png);">
+    <div class="comming-soon-page" style="background-image: url(<%=pjName%>/resources/assets/images/bg/12.png);">
         <div class="container">
             <div class="logo-wrapper">
                 <a href="index">
-                    <img src="images/logo.png" alt="logo">
+                    <img src="<%=pjName%>/resources/assets/images/logo.png" alt="logo">
                 </a>
             </div>
             <div class="row justify-content-center">
@@ -86,24 +86,24 @@
     <!-- error page area end -->
 
     <!-- Additional plugin js -->
-    <script src="js/jquery-2.2.4.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.magnific-popup.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script src="js/slick.js"></script>
-    <script src="js/waypoints.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <script src="js/imagesloaded.pkgd.min.js"></script>
-    <script src="js/isotope.pkgd.min.js"></script>
-    <script src="js/swiper.min.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/countdown.js"></script>
+    <script src="<%=pjName%>/resources/assets/js/jquery-2.2.4.min.js"></script>
+    <script src="<%=pjName%>/resources/assets/js/popper.min.js"></script>
+    <script src="<%=pjName%>/resources/assets/js/bootstrap.min.js"></script>
+    <script src="<%=pjName%>/resources/assets/js/jquery.magnific-popup.js"></script>
+    <script src="<%=pjName%>/resources/assets/js/owl.carousel.min.js"></script>
+    <script src="<%=pjName%>/resources/assets/js/wow.min.js"></script>
+    <script src="<%=pjName%>/resources/assets/js/slick.js"></script>
+    <script src="<%=pjName%>/resources/assets/js/waypoints.min.js"></script>
+    <script src="<%=pjName%>/resources/assets/js/jquery.counterup.min.js"></script>
+    <script src="<%=pjName%>/resources/assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="<%=pjName%>/resources/assets/js/isotope.pkgd.min.js"></script>
+    <script src="<%=pjName%>/resources/assets/js/swiper.min.js"></script>
+    <script src="<%=pjName%>/resources/assets/js/jquery.nice-select.min.js"></script>
+    <script src="<%=pjName%>/resources/assets/js/jquery-ui.min.js"></script>
+    <script src="<%=pjName%>/resources/assets/js/countdown.js"></script>
 
     <!-- main js -->
-    <script src="js/main.js"></script>
+    <script src="<%=pjName%>/resources/assets/js/main.js"></script>
 
 </body>
 </html>

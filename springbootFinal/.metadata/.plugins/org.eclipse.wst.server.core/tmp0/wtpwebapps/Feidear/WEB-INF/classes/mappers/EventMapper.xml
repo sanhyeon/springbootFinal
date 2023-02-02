@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.dao.EventDAO">
+	
+	<!-- 회원정보 가져오기 -->
+	<select id="getEvent" resultType="EventVO" parameterType="EventVO">
+		SELECT *
+		FROM event
+		WHERE ev_no = #{ev_no}
+	</select>
+	
+	<!-- 이벤트 목록 내림차순으로 가져오기 -->
+	<select id="getEventList" resultType="EventVO" parameterType="EventVO">
+		select *
+		from (
+			   select *,
+			   row_number () over(order by ev_no desc) as ROWNUM
+		 	   from event
+	 		 ) rv
+		where ROWNUM between #{rowStart} AND #{rowEnd}
+		order by ev_no desc
+	</select>
+
+	<!-- 페이징 -->
+	 <select id="listCount" resultType="int">
+	<![CDATA[
+		SELECT COUNT(ev_no)
+		  FROM event
+		 WHERE ev_no > 0
+	]]>
+	</select>
+	
+	<!-- 이벤트 작성하기 -->
+	<insert id="saveEvent" parameterType="EventVO">
+		INSERT INTO event 
+			  		(ev_title, ev_content, ev_regdate
+			  		<if test="file_name !=null">
+			  		, file_name, origin_file_name, file_size, file_path
+			  		</if>
+			  		<if test="file_name2 !=null">
+			  		, file_name2, origin_file_name2, file_size2, file_path2
+			  		</if>
+			  		)
+		VALUES	 	(#{ev_title}, #{ev_content}, NOW()
+					<if test="file_name !=null">
+					, #{file_name}, #{origin_file_name}
+					, #{file_size}, #{file_path}
+					</if>
+					<if test="file_name2 !=null">
+					, #{file_name2}, #{origin_file_name2}
+					, #{file_size2}, #{file_path2}
+					</if>
+					)
+	</insert>
+	
+	<!-- 이벤트 삭제하기 -->
+	<delete id="deleteEvent" parameterType="EventVO">
+		DELETE FROM event
+		WHERE 		ev_no = #{ev_no}
+	</delete>
+
+</mapper>

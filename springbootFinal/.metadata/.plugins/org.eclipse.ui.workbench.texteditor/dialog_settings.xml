@@ -1,26 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="jstl"/>
+		<item key="selection" value="맛집"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="jstl"/>
-			<item value="#content"/>
-			<item value="left"/>
+			<item value="맛집"/>
+			<item value="test5"/>
+			<item value="foreach"/>
+			<item value="수정완"/>
+			<item value="test"/>
+			<item value="matjip"/>
+			<item value="matzip"/>
+			<item value="주차장"/>
+			<item value="index"/>
+			<item value="keywordSearch"/>
+			<item value="placesSearchCB"/>
+			<item value="축제 둘러보기"/>
+			<item value="feidear"/>
+			<item value="jQ"/>
+			<item value="query"/>
 		</list>
 		<list key="replacehistory">
 			<item value=""/>
+			<item value="supporters"/>
+			<item value="magazie-details"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="966"/>
-		<item key="DIALOG_Y_ORIGIN" value="285"/>
+		<item key="DIALOG_X_ORIGIN" value="1485"/>
+		<item key="DIALOG_Y_ORIGIN" value="167"/>
 		<item key="DIALOG_WIDTH" value="322"/>
 		<item key="DIALOG_HEIGHT" value="391"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="724"/>
+		<item key="DIALOG_Y_ORIGIN" value="396"/>
 	</section>
 </section>

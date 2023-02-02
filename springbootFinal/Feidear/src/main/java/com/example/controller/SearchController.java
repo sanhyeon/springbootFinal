@@ -1,0 +1,25 @@
+package com.example.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.example.domain.SearchVO;
+import com.example.service.SearchService;
+
+@Controller
+public class SearchController {
+
+	@Autowired
+	private SearchService searchService;
+	
+	// 축제 목록에서 키워드를 직접 입력하여 검색
+	@RequestMapping(value="searchKeywordFestival")
+	public String searchKeywordFestival(SearchVO logVO) {
+		System.out.println("축제 키워드 검색 호출");
+		searchService.saveSearchLog(logVO);
+		
+		return "viewFestivalList";
+	}
+
+}

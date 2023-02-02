@@ -1,5 +1,5 @@
 #Tomcat publish data
-#Fri Jan 06 11:27:51 KST 2023
+#Wed Feb 01 09:42:37 KST 2023
 org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\kosmo\\.m2\\repository\\org\\springframework\\spring-web\\5.3.13\\spring-web-5.3.13.jar=WEB-INF/lib/spring-web-5.3.13.jar
 org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\kosmo\\.m2\\repository\\org\\apache\\tomcat\\embed\\tomcat-embed-el\\9.0.55\\tomcat-embed-el-9.0.55.jar=WEB-INF/lib/tomcat-embed-el-9.0.55.jar
 org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\kosmo\\.m2\\repository\\org\\apache\\tomcat\\embed\\tomcat-embed-jasper\\9.0.55\\tomcat-embed-jasper-9.0.55.jar=WEB-INF/lib/tomcat-embed-jasper-9.0.55.jar

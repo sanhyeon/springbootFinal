@@ -112,7 +112,7 @@
                     <li class="menu-item-has-children">
                         <a href="#">이벤트</a>
                         <ul class="sub-menu">
-                            <li><a href="event">제휴 이벤트</a></li>
+                            <li><a href="blog03">제휴 이벤트</a></li>
                             <li><a href="destination-details">서포터즈</a></li>
                         </ul>
                     </li>

@@ -2,16 +2,33 @@
     pageEncoding="UTF-8"%>
 
 	<!-- header.jsp -->
-	<jsp:include page="header.jsp"></jsp:include>
+	<%@ include file='header.jsp' %>
 	<!-- header.jsp 끝 -->
+	
+	<style>
+        .title, .content{
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+        line-height: 1.2;
+/*        height: 4.8em;*/
+        text-align: left;
+        word-wrap: break-word;
+        display: -webkit-box;
+        -webkit-line-clamp: 1 ;
+        -webkit-box-orient: vertical;
+    	}
+	</style>
 
     <!-- 매거진 상단바 제목 밑 글 area start -->
-    <div class="breadcrumb-area jarallax" style="background-image:url(images/bg/1.png);">
+    <div class="breadcrumb-area jarallax" style="background-image:url(images/index/breadcrumb.jpg);">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb-inner">
-                        <h1 class="page-title">MAGAZINE</h1>
+                        <h1 class="page-title">Magazine</h1>
                         <ul class="page-list">
                            <li>페이디어 자체 매거진</li>
                         </ul>
@@ -22,137 +39,71 @@
     </div>
     <!-- 매거진 상단바 제목 밑 글 area End -->
 
-    <!-- blog area start -->
+    <!-- 매거진 DB 목록 출력 start -->
     <div class="blog-list-area pd-top-120">
         <div class="container">
             <div class="row justify-content-center">
+           <c:forEach items="${mgzList}" var="mgzList">
                 <div class="col-lg-4 col-md-6">
                     <div class="single-blog">
                         <div class="thumb">
-                            <img src="images/blog/1.png" alt="blog">
-                            <a class="tag" href="#">NEW</a>
+                        	<c:if test="${mgzList.file_path != null}">
+                            	<img src="${mgzList.file_path}" alt="blog" style="width:500px; height:280px;">
+							</c:if>
+                        	<c:if test="${mgzList.file_path == null}">
+                            	<img src="images/blog/magazine_pic.png" alt="blog" style="width:500px; height:280px;">
+							</c:if>
                         </div>
                         <div class="single-blog-details">
-                            <p class="date">2023-01-05 THUR</p>
-                            <h4 class="title"><a href="#">Vol.11</a></h4>
-                            <p class="content">한겨울의 가산에 가다! 지원 리포터의 가산 코딩 축제 생존기부터 안양천 빙어 낚시 대회까지</p>
-                            <a class="btn-read-more" href="blog-details03"><span>Read More<i class="la la-arrow-right"></i></span></a>
+                            <p class="date">${mgzList.mgz_regdate}</p>
+                            <h4 class="title"><a href="/magazine-details?mgz_no=${mgzList.mgz_no}">${mgzList.mgz_title}</a></h4>
+                            <p class="content">${mgzList.mgz_content}</p>
+                            <a class="btn-read-more" href="/magazine-details?mgz_no=${mgzList.mgz_no}"><span>Read More<i class="la la-arrow-right"></i></span></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-blog">
-                        <div class="thumb">
-                            <img src="images/blog/2.png" alt="blog">                            
-                        </div>
-                        <div class="single-blog-details">
-                            <p class="date">OO.OO.OO</p>
-                            <h4 class="title"><a href="#">게시글 제목이 될 부분</a></h4>
-                            <p class="content">리뷰 상세 설명  리뷰 상세 설명  리뷰 상세 설명 리뷰 상세 설명  리뷰 상세 설명  리뷰 상세 설명 리뷰 상세 설명  리뷰 상세 설명  리뷰 상세 설명 </p>
-                            <a class="btn-read-more" href="blog-details03"><span>Read More<i class="la la-arrow-right"></i></span></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-blog">
-                        <div class="thumb">
-                            <img src="images/blog/2.png" alt="blog">                            
-                        </div>
-                        <div class="single-blog-details">
-                            <p class="date">OO.OO.OO</p>
-                            <h4 class="title"><a href="#">게시글 제목이 될 부분</a></h4>
-                            <p class="content">리뷰 상세 설명  리뷰 상세 설명  리뷰 상세 설명 리뷰 상세 설명  리뷰 상세 설명  리뷰 상세 설명 리뷰 상세 설명  리뷰 상세 설명  리뷰 상세 설명 </p>
-                            <a class="btn-read-more" href="blog-details03"><span>Read More<i class="la la-arrow-right"></i></span></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-blog">
-                        <div class="thumb">
-                            <img src="images/blog/2.png" alt="blog">                            
-                        </div>
-                        <div class="single-blog-details">
-                            <p class="date">OO.OO.OO</p>
-                            <h4 class="title"><a href="#">게시글 제목이 될 부분</a></h4>
-                            <p class="content">리뷰 상세 설명  리뷰 상세 설명  리뷰 상세 설명 리뷰 상세 설명  리뷰 상세 설명  리뷰 상세 설명 리뷰 상세 설명  리뷰 상세 설명  리뷰 상세 설명 </p>
-                            <a class="btn-read-more" href="blog-details03"><span>Read More<i class="la la-arrow-right"></i></span></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-blog">
-                        <div class="thumb">
-                            <img src="images/blog/2.png" alt="blog">                            
-                        </div>
-                        <div class="single-blog-details">
-                            <p class="date">OO.OO.OO</p>
-                            <h4 class="title"><a href="#">게시글 제목이 될 부분</a></h4>
-                            <p class="content">리뷰 상세 설명  리뷰 상세 설명  리뷰 상세 설명 리뷰 상세 설명  리뷰 상세 설명  리뷰 상세 설명 리뷰 상세 설명  리뷰 상세 설명  리뷰 상세 설명 </p>
-                            <a class="btn-read-more" href="blog-details03"><span>Read More<i class="la la-arrow-right"></i></span></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-blog">
-                        <div class="thumb">
-                            <img src="images/blog/2.png" alt="blog">                            
-                        </div>
-                        <div class="single-blog-details">
-                            <p class="date">OO.OO.OO</p>
-                            <h4 class="title"><a href="#">게시글 제목이 될 부분</a></h4>
-                            <p class="content">리뷰 상세 설명  리뷰 상세 설명  리뷰 상세 설명 리뷰 상세 설명  리뷰 상세 설명  리뷰 상세 설명 리뷰 상세 설명  리뷰 상세 설명  리뷰 상세 설명 </p>
-                            <a class="btn-read-more" href="blog-details03"><span>Read More<i class="la la-arrow-right"></i></span></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-blog">
-                        <div class="thumb">
-                            <img src="images/blog/2.png" alt="blog">                            
-                        </div>
-                        <div class="single-blog-details">
-                            <p class="date">OO.OO.OO</p>
-                            <h4 class="title"><a href="#">게시글 제목이 될 부분</a></h4>
-                            <p class="content">리뷰 상세 설명  리뷰 상세 설명  리뷰 상세 설명 리뷰 상세 설명  리뷰 상세 설명  리뷰 상세 설명 리뷰 상세 설명  리뷰 상세 설명  리뷰 상세 설명 </p>
-                            <a class="btn-read-more" href="blog-details03"><span>Read More<i class="la la-arrow-right"></i></span></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-blog">
-                        <div class="thumb">
-                            <img src="images/blog/2.png" alt="blog">                            
-                        </div>
-                        <div class="single-blog-details">
-                            <p class="date">OO.OO.OO</p>
-                            <h4 class="title"><a href="#">게시글 제목이 될 부분</a></h4>
-                            <p class="content">리뷰 상세 설명  리뷰 상세 설명  리뷰 상세 설명 리뷰 상세 설명  리뷰 상세 설명  리뷰 상세 설명 리뷰 상세 설명  리뷰 상세 설명  리뷰 상세 설명 </p>
-                            <a class="btn-read-more" href="blog-details03"><span>Read More<i class="la la-arrow-right"></i></span></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-blog">
-                        <div class="thumb">
-                            <img src="images/blog/2.png" alt="blog">                            
-                        </div>
-                        <div class="single-blog-details">
-                            <p class="date">OO.OO.OO</p>
-                            <h4 class="title"><a href="#">게시글 제목이 될 부분</a></h4>
-                            <p class="content">리뷰 상세 설명  리뷰 상세 설명  리뷰 상세 설명 리뷰 상세 설명  리뷰 상세 설명  리뷰 상세 설명 리뷰 상세 설명  리뷰 상세 설명  리뷰 상세 설명 </p>
-                            <a class="btn-read-more" href="blog-details03"><span>Read More<i class="la la-arrow-right"></i></span></a>
-                        </div>
-                    </div>
-                </div>
+            </c:forEach>
             </div>
+            
+            <!-- 페이징 시작 -->
+                    <div class="row">
+                        <div class="col-lg-12  text-md-center text-left">
+                            <div class="tp-pagination text-md-center text-left d-inline-block mt-4">
+                                <ul>
+                                	<c:if test="${pageMaker.prev}">
+                                    	<li><a class="prev page-numbers" href="magazine${pageMaker.makeQuery(pageMaker.startPage - 1)}"><i class="la la-long-arrow-left"></i></a></li>
+                                	</c:if>
+                                	<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">                                	
+                                    <li><a href="magazine${pageMaker.makeQuery(idx)}">
+                                    	<!--현재 파라미터로 넘겨받은 페이지의 숫자가 생성되는 숫자와 같으면(현재 페이지) -->
+                                    	<c:if test="${param.page eq idx}">
+                                    	<span class="page-numbers current">${idx}</span>
+                                    	</c:if>
+                                    	
+                                    	<!--현재 파라미터로 넘겨받은 페이지의 숫자가 생성되는 숫자와 다르면(나머지 페이지) -->
+                                    	<c:if test="${param.page ne idx}">
+                                    	<span class="page-numbers">${idx}</span>
+                                    	</c:if>
+                                    	
+                                    	</a></li>
+                                	</c:forEach>                               	
+                                    <c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+                                    	<li><a class="next page-numbers" href="magazine${pageMaker.makeQuery(pageMaker.endPage + 1)}"><i class="la la-long-arrow-right"></i></a></li>
+                                	</c:if> 
+                                </ul>                          
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 페이징 끝 -->
+            
         </div>
     </div>
-    <!-- blog area End -->
+    <!-- 매거진 DB 목록 출력 End -->
     
-    <!-- newslatter area Start ( 공백용 ) -->
-	<div class="newslatter-area pd-top-120">
-    	<div class="container">
-        	<div class="newslatter-area-wrap border-tp-solid">
+<!-- newslatter area Start ( 공백용 ) -->
+<div class="newslatter-area pd-top-120">
+    <div class="container">
+        <div class="newslatter-area-wrap border-tp-solid">
         </div>
     </div>
 </div>

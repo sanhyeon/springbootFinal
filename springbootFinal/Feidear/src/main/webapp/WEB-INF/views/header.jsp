@@ -13,6 +13,20 @@
     <!-- favicon -->
     <link rel=icon href="/images/favicon.png" sizes="20x20" type="image/png">
 
+    <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.2.js" charset="utf-8"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+    <style type="text/css">
+        html, div, body,h3{
+          margin: 0;
+          padding: 0;
+        }
+        h3{
+          display: inline-block;
+          padding: 0.6em;
+        }
+        </style>
+
     <!-- Additional plugin css -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/animate.css">
@@ -30,10 +44,22 @@
     <link rel="stylesheet" href="/css/style.css">
     <!-- responsive css -->
     <link rel="stylesheet" href="/css/responsive.css">
+    <!-- sweet alert창 -->
+   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+   <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
+
+   <script type="text/javascript">
+
+    var t = '${feidear}';
+    if (t == '5') {
+       alert('로그인 오류! 다시 입력해주세요')
+       window.history.go(-1);s
+    }
+    </script>
 
 </head>
 <body>
-
 
     <!-- preloader area start -->
     <div class="preloader" id="preloader">
@@ -54,42 +80,31 @@
             <div class="row no-gutters">
                 <div class="col-lg-6">
                     <div class="thumb">
-                        <img src="/images/others/signup.png" alt="img">
+                        <a href="festival/festivalDetails?fetv_no=53"><img src="/images/index/fetv_no_53.png" alt="img"></a>
                     </div>
                 </div>
                 <div class="col-lg-6 align-self-center">
-                    <div class="shape-thumb">
-                        <img src="/images/others/signup-shape.png" alt="img">
-                    </div>
-                    <form class="login-form-wrap">
+                    
+                    <form class="login-form-wrap" method="POST" action="/user/loginUser">
                         <h4 class="text-center">Log In</h4>
                         <div class="single-input-wrap style-two">
-                            <input type="text" placeholder="ID">
+                            <input type="text" placeholder="ID" name="u_id" id="u_id">
                             <span class="single-input-title"><i class="fa fa-user"></i></span>
                         </div>
                         <div class="single-input-wrap style-two">
-                            <input type="text" placeholder="Password">
+                            <input type="password" placeholder="Password" name="u_pw" id="u_pw">
                             <span class="single-input-title"><i class="fa fa-lock"></i></span>
                         </div>
-                        <label class="checkbox">
-                            <input type="checkbox">
-                            <span>Remember me</span>
-                        </label>
                         <div class="single-input-wrap style-two">
-                            <button class="btn btn-yellow w-100">로그인</button>
+                            <button class="btn btn-yellow w-100" id="u_loginBtn">로그인</button>
                         </div>
-                        <div class="sign-in-btn">페이디어 계정이 없어요 ☞ <a href="/sign-up">회원가입</a></div> 
-                        <div class="social-wrap">
-                            <p>Or Continue With</p>
-                            <ul class="social-icon">
-                                <li>
-                                    <a class="facebook" href="/#" target="_blank"><i class="fa fa-facebook  "></i></a>
-                                </li>
-                                <li>
-                                    <a class="twitter" href="/#" target="_blank"><i class="fa fa-twitter  "></i></a>
-                                </li>
-                            </ul>
-                        </div>
+                        <ul>
+                            <div class="sign-in-btn">페이디어 계정이 없어요 ☞ <a href="/sign-up">회원가입</a></div><br>
+                              <!-- 네이버 소셜 로그인 섹션 
+                              <div id="naver_id_login" style="text-align:center"><a href="${url}">
+                                <img width="223" src="https://developers.naver.com/doc/review_201802/CK_bEFnWMeEBjXpQ5o8N_20180202_7aot50.png"/></a>
+                              </div> -->
+                        </ul>
                     </form>
                 </div>
             </div>
@@ -104,30 +119,35 @@
                 <div class="col-lg-6 topbar-contact-wrap">
                     <div class="topbar-contact">
                         <i class="fa fa-phone"></i>
-                        <span class="title">Support :</span>
+                        <span class="title">TEL</span>
                         <span class="number">02 1234 5678</span>
                     </div>
-                    <ul class="social-icon">
-                        <li>
-                            <a class="facebook" href="/#" target="_blank"><i class="fa fa-facebook  "></i></a>
-                        </li>
-                        <li>
-                            <a class="twitter" href="/#" target="_blank"><i class="fa fa-twitter  "></i></a>
-                        </li>
-                        <li>
-                            <a class="pinterest" href="/#" target="_blank"><i class="fa fa-instagram"></i></a>
-                        </li>
-                    </ul>
+                    <div class="topbar-contact" style="min-width:300px;">
+                        <i class="fa fa-envelope-o"></i>
+                        <span class="title">E-MAIL</span>
+                        <span class="number">feidear@kosmo.com</span>
+                    </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="nav-right-content float-right">
                         <ul class="pl-0">
-
-
                             <li class="notification">
-                                <a class="signUp-btn" href="/#">
-                                    <i class="fa fa-user-o"></i>
+                                <a class="signUp-btn">
+                                    <c:if test="${empty sessionScope.u_id}">
+                                        <i class="fa fa-user-o"></i>
+                                    </c:if>
                                 </a>
+                                    <c:if test="${not empty sessionScope.u_id}">
+                                        <a href="/user/getUser?u_no=${sessionScope.u_no}">
+                                            <span style="color:rgb(255, 255, 255)">${sessionScope.u_id}님 환영합니다!</span>&nbsp&nbsp&nbsp&nbsp&nbsp
+                                            <i class="fa fa-user-circle fa-lg" aria-hidden="true"></i>
+                                        </a>
+                                        <c:if test="${sessionScope.u_id eq 'admin'}">
+                                            <a href="/admin/index">
+                                            <span style="color:rgb(255, 255, 255)">&nbsp;&nbsp;|&nbsp;&nbsp;관리자 페이지</span>&nbsp;<i class="fa fa-cogs fa-lg" aria-hidden="true"></i>
+                                            </a>
+                                        </c:if>
+                                    </c:if>
                             </li>
                         </ul>
                     </div>
@@ -154,7 +174,7 @@
                 <div class="nav-right-content">
                     <ul class="pl-0">
                         <li class="top-bar-btn-booking">
-                            <a class="btn btn-yellow" href="/tour-details">Book Now <i class="fa fa-paper-plane"></i></a>
+                            <a class="btn btn-yellow" href="/festival/calendar">축제 캘린더<i class="fa fa-paper-plane"></i></a>
                         </li>
 
                         <li class="notification">
@@ -175,17 +195,11 @@
                     </a>
                 </div>
                 <ul class="navbar-nav">
-                    <li class="menu-item-has-children">
-                        <a>축제 둘러보기</a>
-                        <ul class="sub-menu">
-                            <li><a href="/viewFestivalList">축제 정보</a></li>
-                            <li><a href="#">근처 맛집</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="/viewFestivalList">축제 둘러보기</a></li>
                     <li class="menu-item-has-children">
                         <a>커뮤니티</a>
                         <ul class="sub-menu">
-                            <li><a href="/review-list">축제 일기</a></li>
+                            <li><a href="/reviews/getReviewList">축제 일기</a></li>
                             <li><a href="/magazine">매거진</a></li>
                         </ul>
                     </li>
@@ -193,27 +207,35 @@
                         <a>이벤트</a>
                         <ul class="sub-menu">
                             <li><a href="/event">제휴 이벤트</a></li>
-                      		<li><a href="/destination-details">서포터즈</a></li>
+                      		<li><a href="/supporters">서포터즈</a></li>
                         </ul>
                     </li>
+                    <c:if test="${empty sessionScope.u_id}">
+                        <li>
+                            <a class="signUp-btn" href="#">스마트 페이지</a>
+                        </li>
+                    </c:if>
+                    <c:if test="${not empty sessionScope.u_id}">
+                        <li class="menu-item-has-children">
+                            <a>스마트 페이지</a>
+                            <ul class="sub-menu">
+                                <li><a href="/smart/smart-page?cont=smart">혼잡도 체크</a></li>
+                                <li><a href="/smart/smart-page?cont=weather">실시간 날씨</a></li>
+                                <li><a href="/smart/smart-page?cont=recomm">유저 PICK 추천</a></li>
+                            </ul>
+                        </li>
+                    </c:if>
                     <li>
-                        <a href="/smart-page">스마트 페이지</a>
-                    </li>
-                    <li class="menu-item-has-children">
-                        <a>문의사항</a>
-                        <ul class="sub-menu">
-                            <li><a href="/faq">FAQ</a></li>
-                            <li><a href="/qna">1:1 문의</a></li>
-                        </ul>
+                        <a href="/faq/faq">FAQ</a>
                     </li>
                 </ul>
             </div>
             <div class="nav-right-content">
                 <ul>
-                    <li><a href="/user/getUser">MY PAGE</a>
+                    <li>
                     </li>
                     <li class="pr-0">
-                        <a class="btn btn-yellow" href="/calendar">축제 캘린더<i class="fa fa-paper-plane"></i></a>
+                        <a class="btn btn-yellow" href="/festival/calendar">축제 캘린더<i class="fa fa-paper-plane"></i></a>
                     </li>
                 </ul>
             </div>

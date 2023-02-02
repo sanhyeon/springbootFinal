@@ -1,6 +1,8 @@
+# -*- coding: utf-8 -*-
 # 소켓을 사용하기 위해서는 socket을 import해야 한다.
 import socket, threading
 import weatherForecast as w
+import Recommend_system as r
 
 # binder함수는 서버에서 accept가 되면 생성되는 socket 인스턴스를 통해 client로 부터 데이터를 받으면 echo형태로 재송신하는 메소드이다.
 def binder(client_socket, addr):
@@ -21,11 +23,22 @@ def binder(client_socket, addr):
       # 수신된 메시지를 콘솔에 출력한다.
       print('Received from', addr, msg);
       
-      # 수신된 메시지 앞에 「echo:」 라는 메시지를 붙힌다.
-      # msg = "echo : " + msg;
-      idx = int(msg)
-      msg = w.GetWeatherAfter3Days(idx);
-      # print("msg :", msg)
+      msg = msg.split(',')
+      
+
+      print('>>> 요청 페이지 :',msg[0])
+      # 실시간 날씨 페이지와 연결할 경우
+      if msg[0] == 'weather':
+        idx = int(msg[-1])
+        msg = w.GetWeatherAfter3Days(idx)
+      # 축제 추천 페이지와 연결할 경우
+      elif msg[0] == 'recomm' :
+        msg = r.getRecommend(msg[-1])
+
+      print('>>> 보낼 메세지 :',msg)
+      msg = str(msg)
+      msg.replace("'",'"')
+
       # 바이너리(byte)형식으로 변환한다.
       data = msg.encode();# type: ignore      
       # 바이너리의 데이터 사이즈를 구한다.

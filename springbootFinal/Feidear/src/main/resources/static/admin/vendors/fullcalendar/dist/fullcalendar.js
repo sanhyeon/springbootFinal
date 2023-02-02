@@ -7714,6 +7714,7 @@ TimeGrid.mixin({
 				''
 				) +
 			'>' +
+			//캘린더 이벤트 설정하는 위치?
 				'<div class="fc-content">' +
 					(timeText ?
 						'<div class="fc-time"' +
@@ -11479,7 +11480,7 @@ function EventManager() { // assumed to be a calendar
 	);
 
 
-
+	//시작
 	function requestEvents(start, end) {
 		if (!t.options.lazyFetching || isFetchNeeded(start, end)) {
 			return fetchEvents(start, end);

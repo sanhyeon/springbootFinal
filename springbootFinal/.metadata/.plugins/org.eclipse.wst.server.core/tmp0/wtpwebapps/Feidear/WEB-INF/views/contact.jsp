@@ -5,30 +5,31 @@
  <!DOCTYPE html>
 <html lang="en">
 <head>
+	<%String pjName = "/Feidear";%>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Viaje - Travel, Tour Booking HTML5 Template</title>
     <!-- favicon -->
-    <link rel=icon href="images/favicon.png" sizes="20x20" type="image/png">
+    <link rel=icon href="<%=pjName%>/resources/assets/images/favicon.png" sizes="20x20" type="image/png">
 
     <!-- Additional plugin css -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/slick.css">
-    <link rel="stylesheet" href="css/swiper.min.css">
-    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="<%=pjName%>/resources/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<%=pjName%>/resources/assets/css/animate.css">
+    <link rel="stylesheet" href="<%=pjName%>/resources/assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="<%=pjName%>/resources/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="<%=pjName%>/resources/assets/css/slick.css">
+    <link rel="stylesheet" href="<%=pjName%>/resources/assets/css/swiper.min.css">
+    <link rel="stylesheet" href="<%=pjName%>/resources/assets/css/nice-select.css">
     <!-- icons -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/themify-icons.css">
-    <link rel="stylesheet" href="css/line-awesome.min.css">
+    <link rel="stylesheet" href="<%=pjName%>/resources/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<%=pjName%>/resources/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="<%=pjName%>/resources/assets/css/line-awesome.min.css">
     <!-- main css -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="<%=pjName%>/resources/assets/css/style.css">
     <!-- responsive css -->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="<%=pjName%>/resources/assets/css/responsive.css">
 
 
 </head>
@@ -52,12 +53,12 @@
             <div class="row no-gutters">
                 <div class="col-lg-6">
                     <div class="thumb">
-                        <img src="images/others/signup.png" alt="img">
+                        <img src="<%=pjName%>/resources/assets/images/others/signup.png" alt="img">
                     </div>
                 </div>
                 <div class="col-lg-6 align-self-center">
                     <div class="shape-thumb">
-                        <img src="images/others/signup-shape.png" alt="img">
+                        <img src="<%=pjName%>/resources/assets/images/others/signup-shape.png" alt="img">
                     </div>
                     <form class="login-form-wrap">
                         <h4 class="text-center">Sign Up</h4>
@@ -108,7 +109,7 @@
             <div class="responsive-mobile-menu">
                 <div class="mobile-logo">
                     <a href="index">
-                        <img src="images/sticky-logo.png" alt="logo">
+                        <img src="<%=pjName%>/resources/assets/images/sticky-logo.png" alt="logo">
                     </a>
                 </div>
                 <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#tp_main_menu" 
@@ -136,10 +137,10 @@
             <div class="collapse navbar-collapse" id="tp_main_menu">
                 <div class="logo-wrapper desktop-logo">
                     <a href="index" class="main-logo">
-                        <img src="images/logo.png" alt="logo">
+                        <img src="<%=pjName%>/resources/assets/images/logo.png" alt="logo">
                     </a>
                     <a href="index" class="sticky-logo">
-                        <img src="images/sticky-logo.png" alt="logo">
+                        <img src="<%=pjName%>/resources/assets/images/sticky-logo.png" alt="logo">
                     </a>
                 </div>
                 <ul class="navbar-nav">
@@ -149,8 +150,7 @@
                     <li class="menu-item-has-children">
                         <a href="#">커뮤니티</a>
                         <ul class="sub-menu">
-                        <!-- 한솔 수정 -->
-                            <li><a href="blog04">축제일기</a></li>			
+                            <li><a href="blog-details02">축제일기</a></li>
                             <li><a href="blog02">매거진</a></li>
                             <li><a href="blog-details">매거진 상세</a></li>
                         </ul>
@@ -193,15 +193,15 @@
 
 
     <!-- breadcrumb area start -->
-    <div class="breadcrumb-area jarallax" style="background-image:url(images/bg/1.png);">
+    <div class="breadcrumb-area jarallax" style="background-image:url(<%=pjName%>/resources/assets/images/bg/1.png);">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb-inner">
-                        <h1 class="page-title">일대일 문의</h1>
+                        <h1 class="page-title">Contact Us</h1>
                         <ul class="page-list">
                             <li><a href="index">Home</a></li>
-                            <li>궁금한 점을 질문해주세요!</li>
+                            <li>Contact Us</li>
                         </ul>
                     </div>
                 </div>
@@ -224,7 +224,7 @@
             <div class="row">
                 <div class="col-xl-5 offset-xl-1 col-lg-6">
                     <div class="thumb">
-                        <img src="images/others/11.png" alt="img">
+                        <img src="<%=pjName%>/resources/assets/images/others/11.png" alt="img">
                     </div>
                 </div>
                 <div class="col-xl-5 col-lg-6">
@@ -232,44 +232,73 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <label class="single-input-wrap style-two">
-                                    <span class="single-input-title">분류</span>
-                                    <select class="select-category" name="select-category">
-                                		<option value="회원">회원</option>
-                                		<option value="축제">축제</option>
-                                		<option value="기타">기타</option>
-                                	</select>
+                                    <span class="single-input-title">Name</span>
+                                    <input type="text">
                                 </label>
                             </div>
                             <div class="col-md-6">
                                 <label class="single-input-wrap style-two">
-                                    <span class="single-input-title">제목</span>
+                                    <span class="single-input-title">Number</span>
                                     <input type="text">
                                 </label>
                             </div>
                             <div class="col-lg-12">
                                 <label class="single-input-wrap style-two">
-                                    <span class="single-input-title">문의 내용</span>
+                                    <span class="single-input-title">Email</span>
+                                    <input type="text">
+                                </label>
+                            </div>
+                            <div class="col-lg-12">
+                                <label class="single-input-wrap style-two">
+                                    <span class="single-input-title">Message</span>
                                     <textarea></textarea>
                                 </label>
                             </div>
-                            <div class="col-lg-6">
-                                <label class="single-input-wrap style-two">
-                                    <span class="single-input-title">첨부 파일</span>파일명
-                                    <button class="btn btn" id="search-file">파일 찾기</button>
-                                </label>
+                            <div class="col-12">
+                                <a class="btn btn-yellow" href="#">Send Message</a>
                             </div>
                         </div>
                     </form>
-                </div>
-                <div class="col-lg-6">
-                    <a class="btn" id="question-btn"href="#">문의하기</a>
                 </div>
             </div>
         </div>
     </div>
     <!-- contact area End -->
     
-   
+    <!-- contact info area End -->
+    <div class="contact-info-area pd-top-120">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-7 col-lg-8 order-lg-12">
+                    <iframe class="contact-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55137.3051325513!2d-97.76825118838518!3d30.263256963734733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644b599a0cc032f%3A0x5d9b464bd469d57a!2sAustin%2C%20TX%2C%20USA!5e0!3m2!1sen!2sbd!4v1572085289886!5m2!1sen!2sbd"></iframe>
+                </div>
+                <div class="col-xl-3 col-lg-4 order-lg-1">
+                    <div class="contact-info bg-gray">
+                        <p>
+                            <i class="fa fa-map-marker"></i> 
+                            <span>Lavaca Street, Suite 2000 Austin, TX 24141</span>
+                        </p>
+                        <p>
+                            <i class="fa fa-clock-o"></i> 
+                            <span>Office Hour 9:00 to 7:00 Sunday 10:00 to 5:00</span>
+                        </p>
+                        <p>
+                            <i class="fa fa-envelope"></i> 
+                            <span>Email: <span>Travelpoint@gmail.com</span></span>
+                        </p>
+                        <p>
+                            <i class="fa fa-phone"></i> 
+                            <span>
+                                sell phone: <span>(+88) 0172 570051</span> <br>
+                                telephone: <span>(+88) 07 528 7584</span>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- contact info area End -->
         
     <!-- newslatter area Start -->
     <div class="newslatter-area pd-top-108">
@@ -300,14 +329,14 @@
     <!-- newslatter area End -->
     
     <!-- footer area start -->
-    <footer class="footer-area" style="background-image: url(images/bg/2.png);">
+    <footer class="footer-area" style="background-image: url(<%=pjName%>/resources/assets/images/bg/2.png);">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6">
                     <div class="footer-widget widget">
                         <div class="about_us_widget">
                             <a href="index class="footer-logo"> 
-                                <img src="images/logo.png" alt="footer logo">
+                                <img src="<%=pjName%>/resources/assets/images/logo.png" alt="footer logo">
                             </a>
                             <p>We believe brand interaction is key in commu- nication. Real innovations and a positive customer experience are the heart of successful communication.</p>
                             <ul class="social-icon">
@@ -362,12 +391,12 @@
                     <div class="footer-widget widget">
                         <h4 class="widget-title">Instagram Gallery</h4>
                         <ul class="widget-instagram-feed">
-                            <li><a href="#"><img src="images/instagram/1.png" alt="img"></a></li>
-                            <li><a href="#"><img src="images/instagram/2.png" alt="img"></a></li>
-                            <li><a href="#"><img src="images/instagram/3.png" alt="img"></a></li>
-                            <li><a href="#"><img src="images/instagram/4.png" alt="img"></a></li>
-                            <li><a href="#"><img src="images/instagram/5.png" alt="img"></a></li>
-                            <li><a href="#"><img src="images/instagram/6.png" alt="img"></a></li>
+                            <li><a href="#"><img src="<%=pjName%>/resources/assets/images/instagram/1.png" alt="img"></a></li>
+                            <li><a href="#"><img src="<%=pjName%>/resources/assets/images/instagram/2.png" alt="img"></a></li>
+                            <li><a href="#"><img src="<%=pjName%>/resources/assets/images/instagram/3.png" alt="img"></a></li>
+                            <li><a href="#"><img src="<%=pjName%>/resources/assets/images/instagram/4.png" alt="img"></a></li>
+                            <li><a href="#"><img src="<%=pjName%>/resources/assets/images/instagram/5.png" alt="img"></a></li>
+                            <li><a href="#"><img src="<%=pjName%>/resources/assets/images/instagram/6.png" alt="img"></a></li>
                         </ul>
                     </div>
                 </div>
@@ -389,24 +418,24 @@
 
 
     <!-- Additional plugin js -->
-    <script src="js/jquery-2.2.4.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.magnific-popup.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script src="js/slick.js"></script>
-    <script src="js/waypoints.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <script src="js/imagesloaded.pkgd.min.js"></script>
-    <script src="js/isotope.pkgd.min.js"></script>
-    <script src="js/swiper.min.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/jarallax.min.js"></script>
+    <script src="<%=pjName%>/resources/assets/js/jquery-2.2.4.min.js"></script>
+    <script src="<%=pjName%>/resources/assets/js/popper.min.js"></script>
+    <script src="<%=pjName%>/resources/assets/js/bootstrap.min.js"></script>
+    <script src="<%=pjName%>/resources/assets/js/jquery.magnific-popup.js"></script>
+    <script src="<%=pjName%>/resources/assets/js/owl.carousel.min.js"></script>
+    <script src="<%=pjName%>/resources/assets/js/wow.min.js"></script>
+    <script src="<%=pjName%>/resources/assets/js/slick.js"></script>
+    <script src="<%=pjName%>/resources/assets/js/waypoints.min.js"></script>
+    <script src="<%=pjName%>/resources/assets/js/jquery.counterup.min.js"></script>
+    <script src="<%=pjName%>/resources/assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="<%=pjName%>/resources/assets/js/isotope.pkgd.min.js"></script>
+    <script src="<%=pjName%>/resources/assets/js/swiper.min.js"></script>
+    <script src="<%=pjName%>/resources/assets/js/jquery.nice-select.min.js"></script>
+    <script src="<%=pjName%>/resources/assets/js/jquery-ui.min.js"></script>
+    <script src="<%=pjName%>/resources/assets/js/jarallax.min.js"></script>
 
     <!-- main js -->
-    <script src="js/main.js"></script>
+    <script src="<%=pjName%>/resources/assets/js/main.js"></script>
 
 </body>
 </html>

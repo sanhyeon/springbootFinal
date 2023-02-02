@@ -34,15 +34,37 @@
       }
       
       #weatherTbl .weatherIcon {
-         max-width: 100%;
+         width:25%;
+      }
+
+      #weatherTbl .weatherIcon img {
+        max-width: 100%;
+        width : 60%;
+        margin: 0px auto;
       }
       
       .weatherTd, .dayTd {
          width:10%;
       }
       
-      #weatherTbl td {
+      #weatherTbl td,
+      #weatherTbl thead th,
+      #todayTbl td,
+      #todayTbl thead th {
          text-align: center;
+         vertical-align: middle;
+      }
+
+      #todayTbl {
+        height: 30%;
+        margin: 8% auto;
+      }
+
+
+      #todayTbl .tmp {
+        white-space: nowrap;
+        font-size: 5.5rem;
+        height:75%;
       }
    </style>
    
@@ -178,15 +200,13 @@
                                             </div>
                                                 <!-- 필터 검색 DIV 끝 -->  
                                             <div class="col-lg-12">
-                                                <h5 class="user-details-title">(((지역이름이 들어갈 자리 입니다)))</h5>
+                                                <h5 class="user-details-title" id="areaName">지역을 선택해주세요</h5>
                                                 <!-- 날씨 출력 테이블 -->
-                                                <table id="weatherTbl" style="width:100%;">
-                                                    <tr>
-                                                        <td class="weatherTd"><img class="weatherIcon" alt="화창함" src="images/weather/sunny.gif"/></td>
-                                                        <td class="dayTd" style="text-align: center;">수요일</td>
-                                                        <td>최저</td>
-                                                        <td>최고</td>
-                                                    </tr>
+                                                <table id="todayTbl" style="width:80%;">
+                                                    
+                                                </table>
+                                                <table id="weatherTbl" style="width:100%; margin-bottom: 30%;">
+                                                    
                                                     
                                                 </table>
                                             </div>

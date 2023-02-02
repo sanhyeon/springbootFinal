@@ -31,6 +31,49 @@
     <!-- responsive css -->
     <link rel="stylesheet" href="/css/responsive.css">
 
+    <!-- 챗봇 CSS -->
+    <style type="text/css">
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translate3d(0, 100%, 0);
+            }
+            to {
+                opacity: 1;
+                transform: translateZ(0);
+                z-index: 123456789;
+            }
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+                transform: translateZ(0);
+                z-index: 1;
+            }
+            to {
+                opacity: 0;
+                transform: translate3d(0, 100%, 0);
+                z-index: -123456789!important;
+            }
+        }
+    
+        .test_obj {
+            position: relative;
+            animation: fadeInUp 1s;
+        }   
+
+        .close {
+            position: relative;
+            animation: fadeOut 1s;
+            
+        }
+
+        #chatbot iframe {
+            box-shadow: 0px 0px 15px -1px #565656;
+        }
+    </style>
+
 </head>
 <body>
 
@@ -46,12 +89,17 @@
                     </div>
                     <div class="footer-widget widget text-center">
                         <ul class="widget_nav_menu text-center">
-                            <li><a href="/#">Home</a></li>
-                            <li><a href="/tour-list">Festival</a></li>
-                            <li><a href="/blog04">Community</a></li>
-                            <li><a href="/blog03">Events</a></li>
-                            <li><a href="/faq">FAQ</a></li>
-                            <li><a href="/contact">Q&A</a></li>
+                            <li><a href="/index">FEIDEAR</a></li>
+                            <li><a href="/viewFestivalList">축제 둘러보기</a></li>
+                            <li><a href="/reviews/getReviewList">축제 일기</a></li>
+                            <li><a href="/event">제휴 이벤트</a></li>
+                            <c:if test="${empty sessionScope.u_id}">
+                                <li><a class="signUp-btn" href="#">유저's PICK</a></li>
+                            </c:if>
+                            <c:if test="${not empty sessionScope.u_id}">
+                                <li><a href="/smart/smart-page?cont=recomm">유저's PICK</a></li>
+                            </c:if>
+                            <li><a href="/faq/faq">FAQ</a></li>
                         </ul>
                     </div>  
                 </div>  
@@ -76,22 +124,11 @@
                             </p>
                             <p class="text-left">
                                 <i class="fa fa-paper-plane"></i> 
-                                <span><a href="/#">Support</a></span>
+                                <span><a href="/festival/calendar">축제 일정</a></span>
                             </p>
                         </div>
                     </div>
                 </div> 
-                <div class="col-lg-5">
-                    <div class="widget input-group newslatter-wrap style-two">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fa fa-envelope"></i></span>
-                        </div>
-                        <input type="text" class="form-control" placeholder="Email">
-                        <div class="input-group-append">
-                            <button class="btn btn-yellow" type="button">Subscribe</button>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
         <div class="copyright-inner border-tp-solid">
@@ -105,15 +142,20 @@
     <!-- footer area end -->
     
 	<!-- mini-menu (right section) area start -->
-    <div class="back-to-top2" style="display: block;">
+    <div class="back-to-top2" id="chatbot_icon" style="display: block;">
         <span class="back-top">
-			<a href="/contact"><img src="/images/chatbot_smile.png"></a>
+			<a><img src="/images/chatbot_smile.png"></a>
 		</span>
     </div>
     
     <div class="back-to-top3" style="display: block;">
         <span class="back-top">
-			<a href="/tour-list"><img src="/images/heart.png"></a>
+            <c:if test="${empty sessionScope.u_id}">
+                <a class="signUp-btn" href="#"><img src="/images/user.png"></a>
+            </c:if>
+            <c:if test="${not empty sessionScope.u_id}">
+                <a href="/user/getUser?u_no=${sessionScope.u_no}"><img src="/images/user.png"></a>
+            </c:if>
 		</span>
     </div>
     
@@ -127,6 +169,44 @@
     <!-- back to top area end -->
     
     
-
+    <!-- 챗봇 div -->
+    <div id="chatbot" class="close" style="display:none; position:fixed; bottom:-8px; right: 100px; z-index: 123456789;">
+        <iframe width="450" height="615" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/50d4fa2d-a85c-4483-b66a-55c4493013e4" frameborder="0"></iframe>
+    </div>
+    <!-- 챗봇 modal div 끝 -->
 </body>
+
+<!-- 네이버아이디로로그인 버튼 노출 영역 
+<script type="text/javascript">
+    var naver_id_login = new naver_id_login("W4lGSs8ZKGXKbx5TBuRF", "http://localhost:8090/naver/naver_callback");	// Client ID, CallBack URL 삽입
+                                    // 단 'localhost'가 포함된 CallBack URL
+    var state = naver_id_login.getUniqState();
+
+    naver_id_login.setButton("white", 2, 45);
+    naver_id_login.setDomain("http://localhost:8090/index");	//  URL
+    naver_id_login.setState(state);
+    naver_id_login.setPopup();
+    naver_id_login.init_naver_id_login();
+</script>-->
+
+<script src="/js/jquery-2.2.4.min.js"></script>
+
+<!-- 챗봇 나타나게 하는 JS -->
+<script type="text/javascript">
+    $(function(){
+        let icon = $('#chatbot_icon img');
+
+        let chat = $('div#chatbot');
+
+        icon.click(function(){
+            chat.toggleClass('test_obj');
+            chat.toggleClass('close');
+
+            chat.fadeToggle();
+            // chat.toggle();
+        })//end of click
+
+    })//end of function
+</script>
+
 </html>
